@@ -39,4 +39,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: sanketojha/github-actions-cicd:1.0
+          tags: sanketojha/github-actions-cicd:${{ github.sha }}
