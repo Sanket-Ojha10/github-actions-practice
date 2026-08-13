@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+  name: github-actions-cicd
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: github-actions-cicd
+
+  template:
+    metadata:
+      labels:
+        app: github-actions-cicd
+
+    spec:
+      containers:
+        - name: github-actions-cicd
+          image: github-actions-cicd:2.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
